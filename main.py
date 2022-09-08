@@ -1,3 +1,7 @@
+from sys import exit
+from random import randint
+import time
+import math
 class Scene(object):
     def enter(self):
         pass
@@ -20,4 +24,4 @@ class Map(object):
     def next_scene(self, scene_name):
         pass
 
-    
+
