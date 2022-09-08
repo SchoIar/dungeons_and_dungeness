@@ -2,6 +2,7 @@ from sys import exit
 from random import randint
 import time
 import math
+import iua as i
 
 # Class Hierarchy
 # * Map
@@ -39,17 +40,18 @@ class Death(Scene):
 
 class Start(Scene):
     def enter(self):
-        print('You enter a room... [...]')
-        print('\n You can do the following: 1. Run 2. Fight')
+        print('You enter a room only to see a massive, fire breathing, dungeoness crab.')
+        #print(i.is_alive())
+        print('\n You and your party can either: 1. Run 2. Fight')
         action = input("> ")
-        if action == "Run" or "1":
+        if action.lower() == "run" or "1":
             print('You run into an even bigger crab, which eats you.')
             return 'death'
 
 class Map(object):
     scenes = {
         'start': Start(),
-        'death': Death(),
+        'death': Death(), #can add more scenes here..
     }
 
     def __init__(self, start_scene):
